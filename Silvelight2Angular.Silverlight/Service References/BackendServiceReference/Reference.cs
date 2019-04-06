@@ -18,6 +18,7 @@ namespace Silvelight2Angular.Silverlight.BackendServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BaseEntity", Namespace="http://schemas.datacontract.org/2004/07/Silvelight2Angular.Framework.Data")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Silvelight2Angular.Silverlight.BackendServiceReference.Utente))]
     public partial class BaseEntity : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int IdField;
@@ -41,6 +42,132 @@ namespace Silvelight2Angular.Silverlight.BackendServiceReference {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Utente", Namespace="http://schemas.datacontract.org/2004/07/Silvelight2Angular.Framework.Data")]
+    public partial class Utente : Silvelight2Angular.Silverlight.BackendServiceReference.BaseEntity {
+        
+        private string CAPField;
+        
+        private string CittaField;
+        
+        private string CognomeField;
+        
+        private string IndirizzoField;
+        
+        private string NomeField;
+        
+        private string Note1Field;
+        
+        private string Note2Field;
+        
+        private string ProvinciaField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CAP {
+            get {
+                return this.CAPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CAPField, value) != true)) {
+                    this.CAPField = value;
+                    this.RaisePropertyChanged("CAP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Citta {
+            get {
+                return this.CittaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CittaField, value) != true)) {
+                    this.CittaField = value;
+                    this.RaisePropertyChanged("Citta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Cognome {
+            get {
+                return this.CognomeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CognomeField, value) != true)) {
+                    this.CognomeField = value;
+                    this.RaisePropertyChanged("Cognome");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Indirizzo {
+            get {
+                return this.IndirizzoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IndirizzoField, value) != true)) {
+                    this.IndirizzoField = value;
+                    this.RaisePropertyChanged("Indirizzo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nome {
+            get {
+                return this.NomeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NomeField, value) != true)) {
+                    this.NomeField = value;
+                    this.RaisePropertyChanged("Nome");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Note1 {
+            get {
+                return this.Note1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Note1Field, value) != true)) {
+                    this.Note1Field = value;
+                    this.RaisePropertyChanged("Note1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Note2 {
+            get {
+                return this.Note2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Note2Field, value) != true)) {
+                    this.Note2Field = value;
+                    this.RaisePropertyChanged("Note2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Provincia {
+            get {
+                return this.ProvinciaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProvinciaField, value) != true)) {
+                    this.ProvinciaField = value;
+                    this.RaisePropertyChanged("Provincia");
+                }
             }
         }
     }

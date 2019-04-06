@@ -16,12 +16,17 @@ namespace Silvelight2Angular.Silverlight
 {
     public partial class MainPage : UserControl
     {
+        private CommandClient client;
+
         public MainPage()
         {
             InitializeComponent();
-            var client = new CommandClient();
-            client.GetPageCompleted += Client_GetPageCompleted;
-            client.GetPageAsync(1);
+
+            this.client = new CommandClient();
+            this.client.GetPageCompleted += Client_GetPageCompleted;
+            this.client.GetDataCompleted += Client_GetDataCompleted;
+
+            this.client.GetPageAsync(1);
         }
 
         private void Client_GetPageCompleted(object sender, GetPageCompletedEventArgs e)
@@ -29,6 +34,12 @@ namespace Silvelight2Angular.Silverlight
             string xaml = e.Result.XAML;
             var page = XamlReader.Load(xaml);
             LayoutRoot.Children.Add(page as UIElement);
+            this.client.GetDataAsync(1);
+        }
+
+        private void Client_GetDataCompleted(object sender, GetDataCompletedEventArgs e)
+        {
+            this.DataContext = e.Result;
         }
     }
 }

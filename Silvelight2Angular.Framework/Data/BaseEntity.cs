@@ -11,7 +11,7 @@ namespace Silvelight2Angular.Framework.Data
 {
     using System;
     using System.Collections.Generic;
-    
+
     public abstract partial class BaseEntity
     {
         public int Id { get; set; }
