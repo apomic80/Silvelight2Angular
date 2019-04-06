@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
@@ -26,6 +27,8 @@ namespace Silvelight2Angular.Silverlight
         private void Client_GetPageCompleted(object sender, GetPageCompletedEventArgs e)
         {
             string xaml = e.Result.XAML;
+            var page = XamlReader.Load(xaml);
+            LayoutRoot.Children.Add(page as UIElement);
         }
     }
 }

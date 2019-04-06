@@ -12,7 +12,7 @@
             <Button Width="60" Height="40">Stampa</Button>
             <Button Width="60" Height="40">Annulla</Button>
         </StackPanel>
-        <StackPanel x:Name="Root">
+        <!--<StackPanel x:Name="Root">
             <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
                 <TextBlock Margin="0,5,0,0" Width="60" Text="Nome:" />
                 <TextBox Width="200" />
@@ -47,6 +47,6 @@
                 <TextBlock Margin="0,10,0,0"  Grid.Row="0" Grid.Column="1" Text="Note2" />
                 <TextBox Grid.Row="1" Grid.Column="1" Height="400" />
             </Grid>
-        </StackPanel>
+        </StackPanel>-->
     </StackPanel>
 </UserControl>
