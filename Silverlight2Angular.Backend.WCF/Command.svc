@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Silverlight2Angular.Backend.WCF.Command" CodeBehind="Command.svc.cs" %>

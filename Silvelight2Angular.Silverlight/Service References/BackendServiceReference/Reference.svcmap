@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cc4bba04-fad5-44b1-be5a-e5627831b4e6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51141/Command.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Command.disco" MetadataType="Disco" ID="6231a0f8-73a5-44b3-a357-05f0f53142c4" SourceId="1" SourceUrl="http://localhost:51141/Command.svc?disco" />
+    <MetadataFile FileName="Command.wsdl" MetadataType="Wsdl" ID="17d997a5-e83c-4967-ac69-dae9a34d5cd1" SourceId="1" SourceUrl="http://localhost:51141/Command.svc?wsdl" />
+    <MetadataFile FileName="Command.xsd" MetadataType="Schema" ID="0af55b41-e588-4629-acff-3f3edd0bd74e" SourceId="1" SourceUrl="http://localhost:51141/Command.svc?xsd=xsd1" />
+    <MetadataFile FileName="Command1.xsd" MetadataType="Schema" ID="64587a42-c844-4779-9ffb-b677d6c3736f" SourceId="1" SourceUrl="http://localhost:51141/Command.svc?xsd=xsd0" />
+    <MetadataFile FileName="Command2.xsd" MetadataType="Schema" ID="34c58a0d-5077-4c03-8481-b726ae21575e" SourceId="1" SourceUrl="http://localhost:51141/Command.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

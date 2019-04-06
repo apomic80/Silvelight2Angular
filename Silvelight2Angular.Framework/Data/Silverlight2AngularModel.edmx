@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Silverlight2AngularModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Silverlight2AngularModelStoreContainer">
+    <EntitySet Name="Pages" EntityType="Silverlight2AngularModel.Store.Pages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseEntities" EntityType="Silverlight2AngularModel.Store.BaseEntities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseEntities_Utente" EntityType="Silverlight2AngularModel.Store.BaseEntities_Utente" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Utente_inherits_BaseEntity" Association="Silverlight2AngularModel.Store.FK_Utente_inherits_BaseEntity">
+      <End Role="BaseEntity" EntitySet="BaseEntities" />
+      <End Role="Utente" EntitySet="BaseEntities_Utente" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Pages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="XAML" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Note" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="BaseEntities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseEntities_Utente">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Cognome" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Indirizzo" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="CAP" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="Citta" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Provincia" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Note1" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Note2" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Utente_inherits_BaseEntity">
+    <End Role="BaseEntity" Type="Silverlight2AngularModel.Store.BaseEntities" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Utente" Type="Silverlight2AngularModel.Store.BaseEntities_Utente" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BaseEntity">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Utente">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Silverlight2AngularModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Silverlight2AngularModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Pages" EntityType="Silverlight2AngularModel.Page" />
+          <EntitySet Name="BaseEntities" EntityType="Silverlight2AngularModel.BaseEntity" cg:GetterAccess="Internal" />
+        </EntityContainer>
+        <EntityType Name="Utente" BaseType="Silverlight2AngularModel.BaseEntity">
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Cognome" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Indirizzo" Type="String" Nullable="false" MaxLength="200" />
+          <Property Name="CAP" Type="String" Nullable="false" MaxLength="5" />
+          <Property Name="Citta" Type="String" Nullable="false" MaxLength="100" />
+          <Property Name="Provincia" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Note1" Type="String" MaxLength="Max" Nullable="true" />
+          <Property Name="Note2" Type="String" MaxLength="Max" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="XAML" Type="String" Nullable="false" MaxLength="Max" />
+          <Property Name="Note" Type="String" Nullable="true" MaxLength="Max" />
+        </EntityType>
+        <EntityType Name="BaseEntity" Abstract="true" cg:TypeAccess="Public">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="None" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Silverlight2AngularModelStoreContainer" CdmEntityContainer="Silverlight2AngularModelContainer">
+    <EntitySetMapping Name="Pages">
+      <EntityTypeMapping TypeName="IsTypeOf(Silverlight2AngularModel.Page)">
+        <MappingFragment StoreEntitySet="Pages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="XAML" ColumnName="XAML" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaseEntities">
+      <EntityTypeMapping TypeName="IsTypeOf(Silverlight2AngularModel.BaseEntity)">
+        <MappingFragment StoreEntitySet="BaseEntities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Silverlight2AngularModel.Utente)">
+        <MappingFragment StoreEntitySet="BaseEntities_Utente">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+          <ScalarProperty Name="Indirizzo" ColumnName="Indirizzo" />
+          <ScalarProperty Name="CAP" ColumnName="CAP" />
+          <ScalarProperty Name="Citta" ColumnName="Citta" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Note1" ColumnName="Note1" />
+          <ScalarProperty Name="Note2" ColumnName="Note2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Silvelight2Angular.Silverlight.BackendServiceReference;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -17,6 +18,14 @@ namespace Silvelight2Angular.Silverlight
         public MainPage()
         {
             InitializeComponent();
+            var client = new CommandClient();
+            client.GetPageCompleted += Client_GetPageCompleted;
+            client.GetPageAsync(1);
+        }
+
+        private void Client_GetPageCompleted(object sender, GetPageCompletedEventArgs e)
+        {
+            string xaml = e.Result.XAML;
         }
     }
 }
