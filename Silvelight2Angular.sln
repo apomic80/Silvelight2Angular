@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silvelight2Angular.Silverlight", "Silvelight2Angular.Silverlight\Silvelight2Angular.Silverlight.csproj", "{0EC174F4-C855-46C5-891B-2CF22DA76C1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silvelight2Angular.Silverlight.Web", "Silvelight2Angular.Silverlight.Web\Silvelight2Angular.Silverlight.Web.csproj", "{3EF99FFB-E71F-4BA5-A53D-4585C0145999}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0EC174F4-C855-46C5-891B-2CF22DA76C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EC174F4-C855-46C5-891B-2CF22DA76C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EC174F4-C855-46C5-891B-2CF22DA76C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EC174F4-C855-46C5-891B-2CF22DA76C1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF99FFB-E71F-4BA5-A53D-4585C0145999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF99FFB-E71F-4BA5-A53D-4585C0145999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF99FFB-E71F-4BA5-A53D-4585C0145999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF99FFB-E71F-4BA5-A53D-4585C0145999}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
