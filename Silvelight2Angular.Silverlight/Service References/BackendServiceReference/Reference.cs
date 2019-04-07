@@ -241,6 +241,11 @@ namespace Silvelight2Angular.Silverlight.BackendServiceReference {
         
         Silvelight2Angular.Silverlight.BackendServiceReference.BaseEntity EndGetData(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ICommand/Save", ReplyAction="http://tempuri.org/ICommand/SaveResponse")]
+        System.IAsyncResult BeginSave(Silvelight2Angular.Silverlight.BackendServiceReference.BaseEntity entity, System.AsyncCallback callback, object asyncState);
+        
+        void EndSave(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ICommand/GetPage", ReplyAction="http://tempuri.org/ICommand/GetPageResponse")]
         System.IAsyncResult BeginGetPage(int id, System.AsyncCallback callback, object asyncState);
         
@@ -298,6 +303,12 @@ namespace Silvelight2Angular.Silverlight.BackendServiceReference {
         private EndOperationDelegate onEndGetDataDelegate;
         
         private System.Threading.SendOrPostCallback onGetDataCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginSaveDelegate;
+        
+        private EndOperationDelegate onEndSaveDelegate;
+        
+        private System.Threading.SendOrPostCallback onSaveCompletedDelegate;
         
         private BeginOperationDelegate onBeginGetPageDelegate;
         
@@ -360,6 +371,8 @@ namespace Silvelight2Angular.Silverlight.BackendServiceReference {
         
         public event System.EventHandler<GetDataCompletedEventArgs> GetDataCompleted;
         
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> SaveCompleted;
+        
         public event System.EventHandler<GetPageCompletedEventArgs> GetPageCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
@@ -410,6 +423,51 @@ namespace Silvelight2Angular.Silverlight.BackendServiceReference {
             }
             base.InvokeAsync(this.onBeginGetDataDelegate, new object[] {
                         id}, this.onEndGetDataDelegate, this.onGetDataCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Silvelight2Angular.Silverlight.BackendServiceReference.ICommand.BeginSave(Silvelight2Angular.Silverlight.BackendServiceReference.BaseEntity entity, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginSave(entity, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        void Silvelight2Angular.Silverlight.BackendServiceReference.ICommand.EndSave(System.IAsyncResult result) {
+            base.Channel.EndSave(result);
+        }
+        
+        private System.IAsyncResult OnBeginSave(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            Silvelight2Angular.Silverlight.BackendServiceReference.BaseEntity entity = ((Silvelight2Angular.Silverlight.BackendServiceReference.BaseEntity)(inValues[0]));
+            return ((Silvelight2Angular.Silverlight.BackendServiceReference.ICommand)(this)).BeginSave(entity, callback, asyncState);
+        }
+        
+        private object[] OnEndSave(System.IAsyncResult result) {
+            ((Silvelight2Angular.Silverlight.BackendServiceReference.ICommand)(this)).EndSave(result);
+            return null;
+        }
+        
+        private void OnSaveCompleted(object state) {
+            if ((this.SaveCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.SaveCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void SaveAsync(Silvelight2Angular.Silverlight.BackendServiceReference.BaseEntity entity) {
+            this.SaveAsync(entity, null);
+        }
+        
+        public void SaveAsync(Silvelight2Angular.Silverlight.BackendServiceReference.BaseEntity entity, object userState) {
+            if ((this.onBeginSaveDelegate == null)) {
+                this.onBeginSaveDelegate = new BeginOperationDelegate(this.OnBeginSave);
+            }
+            if ((this.onEndSaveDelegate == null)) {
+                this.onEndSaveDelegate = new EndOperationDelegate(this.OnEndSave);
+            }
+            if ((this.onSaveCompletedDelegate == null)) {
+                this.onSaveCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSaveCompleted);
+            }
+            base.InvokeAsync(this.onBeginSaveDelegate, new object[] {
+                        entity}, this.onEndSaveDelegate, this.onSaveCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -545,6 +603,18 @@ namespace Silvelight2Angular.Silverlight.BackendServiceReference {
                 object[] _args = new object[0];
                 Silvelight2Angular.Silverlight.BackendServiceReference.BaseEntity _result = ((Silvelight2Angular.Silverlight.BackendServiceReference.BaseEntity)(base.EndInvoke("GetData", _args, result)));
                 return _result;
+            }
+            
+            public System.IAsyncResult BeginSave(Silvelight2Angular.Silverlight.BackendServiceReference.BaseEntity entity, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = entity;
+                System.IAsyncResult _result = base.BeginInvoke("Save", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public void EndSave(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                base.EndInvoke("Save", _args, result);
             }
             
             public System.IAsyncResult BeginGetPage(int id, System.AsyncCallback callback, object asyncState) {

@@ -5,17 +5,28 @@ namespace Silverlight2Angular.Backend.WCF
 {
     public class Command : ICommand
     {
-        private static Application application = new Application();
-
         public BaseEntity GetData(int id)
         {
-            return application.GetData(id);
+            using (Application application = new Application())
+            {
+                return application.GetData(id);
+            }
+        }
+
+        public void Save(BaseEntity entity)
+        {
+            using (Application application = new Application())
+            {
+                application.Save(entity);
+            }
         }
 
         public Page GetPage(int id)
         {
-            return application.GetPage(id);
+            using (Application application = new Application())
+            {
+                return application.GetPage(id);
+            }
         }
-
     }
 }

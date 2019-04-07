@@ -26,8 +26,8 @@
     <MetadataFile FileName="Command.disco" MetadataType="Disco" ID="6231a0f8-73a5-44b3-a357-05f0f53142c4" SourceId="1" SourceUrl="http://localhost:51141/Command.svc?disco" />
     <MetadataFile FileName="Command.wsdl" MetadataType="Wsdl" ID="17d997a5-e83c-4967-ac69-dae9a34d5cd1" SourceId="1" SourceUrl="http://localhost:51141/Command.svc?wsdl" />
     <MetadataFile FileName="Command.xsd" MetadataType="Schema" ID="0af55b41-e588-4629-acff-3f3edd0bd74e" SourceId="1" SourceUrl="http://localhost:51141/Command.svc?xsd=xsd1" />
-    <MetadataFile FileName="Command2.xsd" MetadataType="Schema" ID="34c58a0d-5077-4c03-8481-b726ae21575e" SourceId="1" SourceUrl="http://localhost:51141/Command.svc?xsd=xsd2" />
     <MetadataFile FileName="Command1.xsd" MetadataType="Schema" ID="64587a42-c844-4779-9ffb-b677d6c3736f" SourceId="1" SourceUrl="http://localhost:51141/Command.svc?xsd=xsd0" />
+    <MetadataFile FileName="Command2.xsd" MetadataType="Schema" ID="34c58a0d-5077-4c03-8481-b726ae21575e" SourceId="1" SourceUrl="http://localhost:51141/Command.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

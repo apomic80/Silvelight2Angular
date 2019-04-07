@@ -11,7 +11,9 @@ namespace Silvelight2Angular.Framework.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
 
+    [KnownType(typeof(Utente))]
     public abstract partial class BaseEntity
     {
         public int Id { get; set; }

@@ -3,37 +3,45 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:conv="clr-namespace:Silvelight2Angular.Silverlight.Converters"
     mc:Ignorable="d"
     d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <conv:BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+    </UserControl.Resources>
     <StackPanel x:Name="LayoutRoot" Background="White">
         <StackPanel Orientation="Horizontal">
-            <Button Width="60" Height="40">Nuovo</Button>
-            <Button Width="60" Height="40">Salva</Button>
+            <Button Click="BtnNuovo_Click" Width="60" Height="40">Nuovo</Button>
+            <Button Click="BtnSalva_Click" Width="60" Height="40">Salva</Button>
             <Button Width="60" Height="40">Stampa</Button>
             <Button Width="60" Height="40">Annulla</Button>
         </StackPanel>
-        <!--<StackPanel x:Name="Root">
+        <StackPanel x:Name="Root">
             <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
                 <TextBlock Margin="0,5,0,0" Width="60" Text="Nome:" />
-                <TextBox Text="{Binding Path=Nome}" Width="200" />
+                <TextBox x:Name="txtNome" Text="{Binding Path=Nome, Mode=TwoWay}" Width="200" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="0,5,0,0" Width="60" Text="Cognome:" />
-                <TextBox Width="200" />
+                <TextBox x:Name="txtCognome" Text="{Binding Path=Cognome, Mode=TwoWay}" Width="200" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="0,5,0,0" Width="60" Text="Indirizzo:" />
-                <TextBox Width="200" />
+                <TextBox x:Name="txtIndirizzo" Text="{Binding Path=Indirizzo, Mode=TwoWay}" Width="200" />
                 <TextBlock Margin="10,5,0,0" Width="60" Text="CAP:" />
-                <TextBox Width="70" />
+                <TextBox x:Name="txtCAP" Text="{Binding Path=CAP, Mode=TwoWay}" Width="70" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="0,5,0,0" Width="60" Text="Città:" />
-                <TextBox Width="200" />
+                <TextBox x:Name="txtCitta" Text="{Binding Path=Citta, Mode=TwoWay}" Width="200" />
                 <TextBlock Margin="10,5,0,0" Width="60" Text="Provincia:" />
-                <TextBox Width="70" />
+                <TextBox x:Name="txtProvincia" Text="{Binding Path=Provincia, Mode=TwoWay}" Width="70" />
             </StackPanel>
-            <Grid>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="0,5,0,0" Width="120" Text="Visualizza Note:" />
+                <CheckBox x:Name="chkMostraNote" Margin="0,5,0,0" IsChecked="True" />
+            </StackPanel>
+            <Grid Visibility="{Binding IsChecked, ElementName=chkMostraNote, Converter={StaticResource BooleanToVisibility}}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="35" />
                     <RowDefinition Height="*" />
@@ -43,10 +51,10 @@
                     <ColumnDefinition Width="50*" />
                 </Grid.ColumnDefinitions>
                 <TextBlock Margin="0,10,0,0" Grid.Row="0" Grid.Column="0" Text="Note1" />
-                <TextBox Grid.Row="1" Grid.Column="0" Height="400" />
+                <TextBox x:Name="txtNote1" Text="{Binding Path=Note1, Mode=TwoWay}" Grid.Row="1" Grid.Column="0" Height="400" />
                 <TextBlock Margin="0,10,0,0"  Grid.Row="0" Grid.Column="1" Text="Note2" />
-                <TextBox Grid.Row="1" Grid.Column="1" Height="400" />
+                <TextBox x:Name="txtNote2" Text="{Binding Path=Note2, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Height="400" />
             </Grid>
-        </StackPanel>-->
+        </StackPanel>
     </StackPanel>
 </UserControl>

@@ -6,9 +6,11 @@ namespace Silverlight2Angular.Backend.WCF
     [ServiceContract]
     public interface ICommand
     {
-        [ServiceKnownType(typeof(Utente))]
         [OperationContract]
         BaseEntity GetData(int id);
+
+        [OperationContract]
+        void Save(BaseEntity entity);
 
         [OperationContract]
         Page GetPage(int id);
