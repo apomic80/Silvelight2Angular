@@ -3,6 +3,5 @@
              x:Class="Silvelight2Angular.Silverlight.App"
              >
     <Application.Resources>
-        
     </Application.Resources>
 </Application>

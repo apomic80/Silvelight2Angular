@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/06/2019 18:37:23
+-- Date Created: 04/07/2019 16:46:25
 -- Generated from EDMX file: C:\Users\micheleaponte\Desktop\Silvelight2Angular\Silvelight2Angular.Framework\Data\Silverlight2AngularModel.edmx
 -- --------------------------------------------------
 
@@ -49,7 +49,7 @@ GO
 
 -- Creating table 'BaseEntities'
 CREATE TABLE [dbo].[BaseEntities] (
-    [Id] int  NOT NULL
+    [Id] int IDENTITY(1,1) NOT NULL
 );
 GO
 

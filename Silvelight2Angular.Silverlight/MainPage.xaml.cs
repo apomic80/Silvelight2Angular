@@ -26,8 +26,7 @@ namespace Silvelight2Angular.Silverlight
             this.client.GetPageCompleted += Client_GetPageCompleted;
             this.client.GetDataCompleted += Client_GetDataCompleted;
             this.client.SaveCompleted += Client_SaveCompleted;
-            this.client.GetDataAsync(1);
-            //this.client.GetPageAsync(1);
+            this.client.GetPageAsync(1);
         }
 
         private void Client_GetPageCompleted(object sender, GetPageCompletedEventArgs e)
