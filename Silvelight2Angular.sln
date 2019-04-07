@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silverlight2Angular.Backend
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silvelight2Angular.Framework", "Silvelight2Angular.Framework\Silvelight2Angular.Framework.csproj", "{6338D94B-314F-4A60-AB6A-368073AE1134}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silverlight2Angular.Backend.MVC", "Silverlight2Angular.Backend.MVC\Silverlight2Angular.Backend.MVC.csproj", "{D07BD65F-E2E8-410F-B0E6-2859939CBD38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{6338D94B-314F-4A60-AB6A-368073AE1134}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6338D94B-314F-4A60-AB6A-368073AE1134}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6338D94B-314F-4A60-AB6A-368073AE1134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D07BD65F-E2E8-410F-B0E6-2859939CBD38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D07BD65F-E2E8-410F-B0E6-2859939CBD38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D07BD65F-E2E8-410F-B0E6-2859939CBD38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D07BD65F-E2E8-410F-B0E6-2859939CBD38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
