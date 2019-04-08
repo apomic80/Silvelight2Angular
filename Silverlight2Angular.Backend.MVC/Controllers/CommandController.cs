@@ -1,7 +1,11 @@
 ﻿using Silvelight2Angular.Framework;
 using Silvelight2Angular.Framework.Data;
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
 using System.Web.Http;
 using System.Xml.Linq;
+using System.Linq;
 
 namespace Silverlight2Angular.Backend.MVC.Controllers
 {
@@ -34,11 +38,18 @@ namespace Silverlight2Angular.Backend.MVC.Controllers
 
         [HttpPost]
         [Route("Save")]
-        public void Save([FromBody]BaseEntity entity)
+        public void Save([FromBody]Dictionary<string, object> entity)
         {
             using (Application application = new Application())
             {
-                application.Save(entity);
+                int id = Convert.ToInt32(entity["Id"]);
+                var entityToSave = application.GetData(id);
+                var properties = entityToSave.GetType().GetProperties().Where(x => x.Name != "Id");
+                foreach (var property in properties)
+                {
+                    property.SetValue(entityToSave, entity[property.Name]);
+                }
+                application.Save(entityToSave);
             }
         }
     }
