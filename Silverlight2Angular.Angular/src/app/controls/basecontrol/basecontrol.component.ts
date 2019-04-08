@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { BindingProperties } from '../controls.model';
+import { BindingProperties, Converters } from '../controls.model';
 import { PropertyChangedService } from '../controls.service';
 
 @Component({
@@ -48,7 +48,8 @@ export class BasecontrolComponent {
 
       this.propertyChangedService.onPropertyChanged(
         property => {
-          this.visible = property.propertyValue;
+          this.visible = Converters[converterBinding.converterName]
+            .convert(property.propertyValue, converterBinding.converterParam);
         },
         converterBinding
       );

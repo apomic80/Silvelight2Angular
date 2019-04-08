@@ -15,4 +15,8 @@ export class DetailsService {
     return this.httpClient.get(environment.baseUrl + '/getdata/' + id);
   }
 
+  public save(entity) {
+    return this.httpClient.post(environment.baseUrl + '/save', entity);
+  }
+
 }

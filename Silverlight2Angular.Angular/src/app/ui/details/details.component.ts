@@ -31,4 +31,11 @@ export class DetailsComponent implements OnInit {
       .subscribe(data => this.data = data);
   }
 
+  public save() {
+    this.service.save(this.data)
+      .subscribe(
+        () => alert('Salvataggio eseguito con successo!'),
+        () => alert('Errore durante il salvataggio'));
+  }
+
 }

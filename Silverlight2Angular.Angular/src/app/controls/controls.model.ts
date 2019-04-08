@@ -21,3 +21,23 @@ export class BindingProperties {
       this.elementNamePath === bindingProperties.elementNamePath;
   }
 }
+
+export interface IConverter {
+  convert(value: any, parameter: any): any;
+  convertBack(value: any, parameter: any): any;
+}
+
+export class VisibilityConverter implements IConverter {
+
+  convert(value: boolean, parameter: any): boolean {
+    return value;
+  }
+
+  convertBack(value: boolean, parameter: any): boolean {
+    return value;
+  }
+}
+
+export const Converters: { [id: string]: IConverter; } = {
+  BooleanToVisibility: new VisibilityConverter()
+};
