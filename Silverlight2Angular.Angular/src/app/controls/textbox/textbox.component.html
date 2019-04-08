@@ -1,0 +1,8 @@
+<ng-container *ngIf="visible">
+  <input
+    [style.width]="schema['@Width'] + 'px'"
+    id="{{ schema['@x:Name'] }}"
+    name="{{ schema['@x:Name'] }}"
+    type="text" [(ngModel)]="currentValue"
+      (change)="update()" />
+</ng-container>

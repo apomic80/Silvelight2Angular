@@ -16,6 +16,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silvelight2Angular.Framewor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silverlight2Angular.Backend.MVC", "Silverlight2Angular.Backend.MVC\Silverlight2Angular.Backend.MVC.csproj", "{D07BD65F-E2E8-410F-B0E6-2859939CBD38}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Silverlight2Angular.Angular", "Silverlight2Angular.Angular\", "{ABB9B1F3-1F00-44DA-9588-CD9F8BD6BDD5}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57795"
+		Debug.AspNetCompiler.PhysicalPath = "Silverlight2Angular.Angular\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57795\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57795"
+		Release.AspNetCompiler.PhysicalPath = "Silverlight2Angular.Angular\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57795\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57795"
+		SlnRelativePath = "Silverlight2Angular.Angular\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +63,10 @@ Global
 		{D07BD65F-E2E8-410F-B0E6-2859939CBD38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D07BD65F-E2E8-410F-B0E6-2859939CBD38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D07BD65F-E2E8-410F-B0E6-2859939CBD38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB9B1F3-1F00-44DA-9588-CD9F8BD6BDD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB9B1F3-1F00-44DA-9588-CD9F8BD6BDD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB9B1F3-1F00-44DA-9588-CD9F8BD6BDD5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB9B1F3-1F00-44DA-9588-CD9F8BD6BDD5}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

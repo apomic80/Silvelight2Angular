@@ -1,0 +1,18 @@
+<ng-container *ngIf="visible">
+  <div class="main-container">
+    <ng-container *ngFor="let item of controls">
+        <div *ngIf="item.controlName === 'StackPanel'" class="stackpanel">
+            <app-stackpanel [schema]="item" [data]="data"></app-stackpanel>
+        </div>
+        <ng-container *ngIf="item.controlName === 'TextBlock'">
+          <app-textblock [schema]="item" [data]="data"></app-textblock>
+        </ng-container>
+        <ng-container *ngIf="item.controlName === 'TextBox'">
+          <app-textbox [schema]="item" [data]="data"></app-textbox>
+        </ng-container>
+        <ng-container *ngIf="item.controlName === 'CheckBox'">
+          <app-checkbox [schema]="item" [data]="data"></app-checkbox>
+        </ng-container>
+    </ng-container>
+  </div>
+</ng-container>

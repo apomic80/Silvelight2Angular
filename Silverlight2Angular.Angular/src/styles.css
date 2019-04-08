@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+.stackpanel  {
+  display: block;
+}
+
+.main-container  {
+ display: block;
+ float: left;
+}

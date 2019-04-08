@@ -1,0 +1,7 @@
+<ng-container *ngIf="visible">
+  <input
+    id="{{ schema['@x:Name'] }}"
+    name="{{ schema['@x:Name'] }}"
+    type="checkbox" [(ngModel)]="currentValue"
+      (change)="update()" />
+</ng-container>

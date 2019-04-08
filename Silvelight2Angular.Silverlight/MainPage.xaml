@@ -29,16 +29,24 @@
                 <TextBox x:Name="txtCognome" Text="{Binding Path=Cognome, Mode=TwoWay}" Width="200" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="0,5,0,0" Width="60" Text="Indirizzo:" />
-                <TextBox x:Name="txtIndirizzo" Text="{Binding Path=Indirizzo, Mode=TwoWay}" Width="200" />
-                <TextBlock Margin="10,5,0,0" Width="60" Text="CAP:" />
-                <TextBox x:Name="txtCAP" Text="{Binding Path=CAP, Mode=TwoWay}" Width="70" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0,5,0,0" Width="60" Text="Indirizzo:" />
+                    <TextBox x:Name="txtIndirizzo" Text="{Binding Path=Indirizzo, Mode=TwoWay}" Width="200" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="10,5,0,0" Width="60" Text="CAP:" />
+                    <TextBox x:Name="txtCAP" Text="{Binding Path=CAP, Mode=TwoWay}" Width="70" />
+                </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Margin="0,5,0,0" Width="60" Text="Città:" />
-                <TextBox x:Name="txtCitta" Text="{Binding Path=Citta, Mode=TwoWay}" Width="200" />
-                <TextBlock Margin="10,5,0,0" Width="60" Text="Provincia:" />
-                <TextBox x:Name="txtProvincia" Text="{Binding Path=Provincia, Mode=TwoWay}" Width="70" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0,5,0,0" Width="60" Text="Città:" />
+                    <TextBox x:Name="txtCitta" Text="{Binding Path=Citta, Mode=TwoWay}" Width="200" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="10,5,0,0" Width="60" Text="Provincia:" />
+                    <TextBox x:Name="txtProvincia" Text="{Binding Path=Provincia, Mode=TwoWay}" Width="70" />
+                </StackPanel>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Margin="0,5,0,0" Width="120" Text="Visualizza Note:" />
