@@ -1,7 +1,7 @@
-.stackpanel  {
-  display: block;
+body {
+  font-size: 12px;
 }
 
-.main-container  {
- display: block;
+.stackpanel  {
+  display: block;
 }

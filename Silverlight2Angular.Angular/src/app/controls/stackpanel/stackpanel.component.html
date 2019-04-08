@@ -1,21 +1,28 @@
 <ng-container *ngIf="visible">
-  <div class="main-container">
     <ng-container *ngFor="let item of controls">
-        <div *ngIf="item.controlName === 'StackPanel'" class="stackpanel">
+        <div *ngIf="item.controlName === 'StackPanel'" class="stackpanel"
+          [style.clear]="schema['@Orientation'] === 'Horizontal' ? 'none': 'left'">
             <app-stackpanel [schema]="item" [data]="data"></app-stackpanel>
         </div>
         <ng-container *ngIf="item.controlName === 'TextBlock'">
-          <app-textblock [schema]="item" [data]="data"></app-textblock>
+          <div style="float:left">
+            <app-textblock [schema]="item" [data]="data"></app-textblock>
+          </div>
         </ng-container>
         <ng-container *ngIf="item.controlName === 'TextBox'">
-          <app-textbox [schema]="item" [data]="data"></app-textbox>
+          <div style="float:left">
+            <app-textbox [schema]="item" [data]="data"></app-textbox>
+          </div>
         </ng-container>
         <ng-container *ngIf="item.controlName === 'CheckBox'">
+            <div style="float:left">
           <app-checkbox [schema]="item" [data]="data"></app-checkbox>
+          </div>
         </ng-container>
         <ng-container *ngIf="item.controlName === 'Grid'">
-          <app-grid [schema]="item" [data]="data"></app-grid>
+          <div style="clear: left">
+            <app-grid [schema]="item" [data]="data"></app-grid>
+          </div>
         </ng-container>
     </ng-container>
-  </div>
 </ng-container>
