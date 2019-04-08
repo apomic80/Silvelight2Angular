@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasecontrolComponent } from '../basecontrol/basecontrol.component';
+import { BindingProperties } from '../controls.model';
 
 @Component({
   selector: 'app-textbox',
@@ -9,14 +10,26 @@ import { BasecontrolComponent } from '../basecontrol/basecontrol.component';
 export class TextboxComponent extends BasecontrolComponent implements OnInit {
 
   public currentValue: string;
+  protected binding: BindingProperties;
 
-  constructor() { super(); }
+  constructor() {
+    super();
+  }
 
   ngOnInit() {
   }
 
-  public update() {
+  protected loadData() {
+    this.binding = this.getBindingProperties(this.schema['@Text']);
+    if (this.binding.elementNamePath) {
+      this.currentValue = this.data[this.binding.elementNamePath];
+    }
+  }
 
+  public update() {
+    if (this.binding.elementNamePath) {
+      this.data[this.binding.elementNamePath] = this.currentValue;
+    }
   }
 
 }

@@ -12,7 +12,9 @@ export class GridComponent extends BasecontrolComponent implements OnInit {
   public columnDefinitions = [];
   public controls = [];
 
-  constructor() { super(); }
+  constructor() {
+    super();
+  }
 
   ngOnInit() {
     this.loadRowDefinitions();

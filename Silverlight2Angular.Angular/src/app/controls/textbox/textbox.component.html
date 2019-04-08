@@ -1,9 +1,20 @@
 <ng-container *ngIf="visible">
-  <input class="form-control"
-    [style.width]="schema['@Width'] + 'px'"
-    [style.height]="schema['@Height'] + 'px'"
-    id="{{ schema['@x:Name'] }}"
-    name="{{ schema['@x:Name'] }}"
-    type="text" [(ngModel)]="currentValue"
-      (change)="update()" />
+  <ng-container *ngIf="schema['@Height']">
+    <textarea class="form-control"
+      [style.width]="schema['@Width'] + 'px'"
+      [style.height]="schema['@Height'] + 'px'"
+      id="{{ schema['@x:Name'] }}"
+      name="{{ schema['@x:Name'] }}"
+      type="text" [(ngModel)]="currentValue"
+        (change)="update()"></textarea>
+  </ng-container>
+  <ng-container *ngIf="!schema['@Height']">
+      <input class="form-control"
+        [style.width]="schema['@Width'] + 'px'"
+        [style.height]="schema['@Height'] + 'px'"
+        id="{{ schema['@x:Name'] }}"
+        name="{{ schema['@x:Name'] }}"
+        type="text" [(ngModel)]="currentValue"
+          (change)="update()" />
+    </ng-container>
 </ng-container>

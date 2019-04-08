@@ -8,7 +8,9 @@ import { BasecontrolComponent } from '../basecontrol/basecontrol.component';
 })
 export class TextblockComponent extends BasecontrolComponent implements OnInit {
 
-  constructor() { super(); }
+  constructor() {
+    super();
+  }
 
   ngOnInit() {
   }
