@@ -12,6 +12,7 @@ export class GridComponent extends BasecontrolComponent implements OnInit {
   public rowDefinitions = [];
   public columnDefinitions = [];
   public controls = [];
+  public colSize = 12;
 
   constructor(propertyChangedService: PropertyChangedService) {
     super(propertyChangedService);
@@ -52,6 +53,7 @@ export class GridComponent extends BasecontrolComponent implements OnInit {
       } else {
         this.columnDefinitions.push(cols);
       }
+      this.colSize = this.columnDefinitions.length > 0 ? Math.round(12 / this.columnDefinitions.length) : 12;
     }
   }
 
