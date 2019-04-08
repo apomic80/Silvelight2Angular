@@ -14,5 +14,4 @@ export class BasecontrolComponent {
   constructor() {
     this.visible = true;
   }
-
 }
