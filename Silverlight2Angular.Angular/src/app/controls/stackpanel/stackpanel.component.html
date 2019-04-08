@@ -10,8 +10,8 @@
           </div>
         </ng-container>
         <ng-container *ngIf="item.controlName === 'TextBox'">
-            <div style="float:left">
-          <app-textbox [schema]="item" [data]="data"></app-textbox>
+          <div style="float:left">
+            <app-textbox [schema]="item" [data]="data"></app-textbox>
           </div>
         </ng-container>
         <ng-container *ngIf="item.controlName === 'CheckBox'">
@@ -20,7 +20,9 @@
           </div>
         </ng-container>
         <ng-container *ngIf="item.controlName === 'Grid'">
-          <app-grid [schema]="item" [data]="data"></app-grid>
+          <div style="clear: left">
+            <app-grid [schema]="item" [data]="data"></app-grid>
+          </div>
         </ng-container>
     </ng-container>
 </ng-container>
