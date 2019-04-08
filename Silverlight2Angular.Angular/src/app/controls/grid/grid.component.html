@@ -1,3 +1,8 @@
-<p>
-  grid works!
-</p>
+<div style="display: block" *ngIf="visible">
+  <div  class="row" *ngFor="let row of rowDefinitions;let r=index">
+      <div class="col-sm-6" *ngFor="let col of columnDefinitions;let c=index" style="display:inline-table">
+        <app-textblock *ngIf="getControl(r,c)?.controlName === 'TextBlock'" [schema]="getControl(r,c)" [data]="data"></app-textblock>
+        <app-textbox *ngIf="getControl(r,c)?.controlName === 'TextBox'" [schema]="getControl(r,c)" [data]="data"></app-textbox>
+      </div>
+  </div>
+</div>

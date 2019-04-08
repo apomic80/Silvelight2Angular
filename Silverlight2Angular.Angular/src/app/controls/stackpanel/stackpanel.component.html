@@ -13,6 +13,9 @@
         <ng-container *ngIf="item.controlName === 'CheckBox'">
           <app-checkbox [schema]="item" [data]="data"></app-checkbox>
         </ng-container>
+        <ng-container *ngIf="item.controlName === 'Grid'">
+          <app-grid [schema]="item" [data]="data"></app-grid>
+        </ng-container>
     </ng-container>
   </div>
 </ng-container>
