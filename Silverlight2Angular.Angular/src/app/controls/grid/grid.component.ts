@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasecontrolComponent } from '../basecontrol/basecontrol.component';
+import { PropertyChangedService } from '../controls.service';
 
 @Component({
   selector: 'app-grid',
@@ -12,7 +13,9 @@ export class GridComponent extends BasecontrolComponent implements OnInit {
   public columnDefinitions = [];
   public controls = [];
 
-  constructor() { super(); }
+  constructor(propertyChangedService: PropertyChangedService) {
+    super(propertyChangedService);
+  }
 
   ngOnInit() {
     this.loadRowDefinitions();

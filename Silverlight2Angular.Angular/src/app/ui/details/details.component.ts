@@ -16,12 +16,14 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     this.loadPage(1);
-    // this.loadData(1);
   }
 
   public loadPage(id: number) {
     this.service.getPage(id)
-      .subscribe(page => this.schema = page);
+      .subscribe(page => {
+        this.schema = page;
+        this.loadData(1);
+      });
   }
 
   public loadData(id: number) {

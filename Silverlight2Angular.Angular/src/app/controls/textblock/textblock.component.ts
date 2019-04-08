@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasecontrolComponent } from '../basecontrol/basecontrol.component';
+import { PropertyChangedService } from '../controls.service';
 
 @Component({
   selector: 'app-textblock',
@@ -8,7 +9,9 @@ import { BasecontrolComponent } from '../basecontrol/basecontrol.component';
 })
 export class TextblockComponent extends BasecontrolComponent implements OnInit {
 
-  constructor() { super(); }
+  constructor(propertyChangedService: PropertyChangedService) {
+    super(propertyChangedService);
+  }
 
   ngOnInit() {
   }

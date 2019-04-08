@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasecontrolComponent } from '../basecontrol/basecontrol.component';
+import { PropertyChangedService } from '../controls.service';
 
 @Component({
   selector: 'app-stackpanel',
@@ -10,8 +11,8 @@ export class StackpanelComponent extends BasecontrolComponent implements OnInit 
 
   public controls = [];
 
-  constructor() {
-    super();
+  constructor(propertyChangedService: PropertyChangedService) {
+    super(propertyChangedService);
   }
 
   ngOnInit() {
